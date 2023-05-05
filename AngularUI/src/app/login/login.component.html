@@ -1,0 +1,25 @@
+<section>
+  <div *ngIf="userData">
+    <div class="container mt-5">
+    <h1>{{ userData.displayName }}</h1>
+    <h2>{{ userData.email }}</h2>
+    <img [src]="userData.photoURL" alt="Foto de perfil">
+    <button (click)="logout()" class="btn btn-lg btn-google">Cerrar sesión</button>
+    <br><br>
+    </div>
+
+  </div>
+
+  <div *ngIf="!userData">
+    <div class="container mt-5">
+      <div class="jumbotron" id="jumbotron">
+        <h2 class="mb-4 text-center">Inicia Sesión en COVIDCDS</h2>
+        <p class="lead mb-5">Para disfrutar el máximo de esta página, Inicia sesión y así podrás ver los casos de Covid-19 en Castilla y León.</p>
+      </div><br><br>
+      <div class="from-group mt-3">
+        <button (click)="loginWithGoogle()" class="btn btn-lg btn-google">Inicia sesión con Google</button>
+      </div><br><br>
+    </div>
+  </div>
+
+</section>

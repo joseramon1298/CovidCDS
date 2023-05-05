@@ -1,0 +1,20 @@
+  .navbar-height {
+    height: 120px;
+  }
+  #encabezado-tabla {
+    background-color: #343a40;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  a:hover{
+    color: crimson;
+    text-decoration: none;
+  }
+
+  a img{
+    border-radius: 30%;
+    height: 80px;
+    width: 90px;
+  }

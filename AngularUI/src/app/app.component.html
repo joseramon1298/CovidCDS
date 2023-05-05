@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="app.component.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="icon" type="image/png" href="../assets/logo.png"/>
+</head>
+<body class="bg-light text-dark">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark navbar-height">
+            <a class="navbar-brand text-white" routerLink="/"><img src="../assets/logo.png" alt="Logo CDS"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                <a class="nav-link text-white" routerLink="/inicio">Inicio</a>
+                </li>
+                   <li class="nav-item" *ngIf="userData;">
+                    <a class="nav-link text-white" routerLink="/consultar">Consultar</a>
+                  </li>
+                  <li class="nav-item" *ngIf="userData;">
+                    <a class="nav-link text-white" routerLink="/resumen">Resumen</a>
+                  </li>
+                  <li class="nav-item" *ngIf="userData;">
+                    <a class="nav-link text-white" routerLink="/grafico">Gráfico</a>
+                  </li>
+                <li class="nav-item" >
+                <a class="nav-link text-white" routerLink="/contacto">Contacto</a>
+                </li>
+            </ul>
+            <div *ngIf="userData; else login">
+              <a class="navbar-text text-white" (click)="logout()">
+                <i class='bi bi-arrow-bar-right text-danger'>Cerrar Sesión</i>
+              </a>
+            </div>
+            <ng-template #login >
+              <a class='navbar-text text-white' routerLink="/login">
+                <i class='bi bi-arrow-bar-right'>Iniciar Sesión</i>
+              </a>
+            </ng-template>
+            </div>
+        </nav>
+    </header>
+    <router-outlet></router-outlet>
+    <br><br>
+    <footer class="bg-dark text-white">
+        <div class="container py-3">
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+              <h4>COVIDCDS</h4>
+              <p>¡Encuentra toda la información que necesitas sobre el COVID-19 aquí!</p>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <h4>Enlaces útiles</h4>
+              <ul class="list-unstyled">
+                <li><a  routerLink="/inicio" class="text-white">Inicio</a></li>
+                <li><a  routerLink="/contacto" class="text-white">Contacto</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-4 col-md-12">
+              <h4>Iniciar sesión</h4>
+              <p>¡Inicia sesión para acceder a toda la información sobre el COVID-19!</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</html>
+

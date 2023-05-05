@@ -1,0 +1,5 @@
+kafka-python==2.0.2
+mysql-connector-python
+requests==2.26.0
+
+
