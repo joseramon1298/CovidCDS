@@ -98,3 +98,9 @@ services:
     ports:
       - "4500:4500"
 
+  angularjs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4600:4600"
